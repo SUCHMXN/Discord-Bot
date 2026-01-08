@@ -48,16 +48,10 @@ This is a simple Discord bot built with Node.js and discord.js that allows you t
    - Copy the generated URL, paste it in your browser, and invite the bot to your server.
 
 
-
-DONT DO THIS I ALREADY DID IT FOR YOU YOURS TRULY SUCHMXN
 ### 3. Install Dependencies
    - Download/extract the project files (index.js, register-commands.js, .env.example, package.json).
    - Open a terminal in the project folder.
    - Run: `npm install` (this installs discord.js and dotenv based on package.json).
-
-   DONT DO THIS^^^^^ 
-
-DO THIS INSTEAD `npm run start`
 
 
 ### 4. Configure Environment Variables
