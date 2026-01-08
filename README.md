@@ -1,6 +1,20 @@
-# Discord Spam Bot
-DM Bot for discord keep in mind if caught abusing your account may be reported, limited or banned
+# Discord Spam Bot README
+-----
+## Overview
+This is a simple Discord bot built with Node.js and discord.js that allows you to add messages to a list and send them (spam) to specific users or all members in a server via direct messages (DMs). It includes slash commands for ease of use and a logging system to track progress and results in a specified Discord channel.
 
+**Warning**: Spamming or mass DMing violates Discord's Terms of Service (TOS) and can result in your bot, account, or server being banned. This bot is for educational purposes only. Use it responsibly in private servers with explicit consent from all participants. The developer is not responsible for any misuse.
+
+## Notes
+- Use responsibly.
+- Spamming can lead to bans.
+
+## Features
+- Add messages to a spam list (`/addmsg`).
+- Send messages to a specific user (`/sendto`).
+- Send messages to all non-bot members in the server (`/sendall` - admin only).
+- Set a log channel for progress updates, successes, failures, and summaries (`/setlogchannel` - admin only).
+- Logs include start/end of operations, per-user status (for `/sendall`), progress every 10 members, and final summaries.
 
 ENV Example Below
 
@@ -18,26 +32,6 @@ GUILD_ID=YOUR_GUILD_ID
 2. Fill in your values inside of `.env` not inside of `.env.example`
 3. Deploy commands: `npm run deploy`
 4. Start the bot: `npm run start`
-
-## Notes
-- Use responsibly.
-- Spamming can lead to bans.
-
-
-
-# Discord Spam Bot README
-
-## Overview
-This is a simple Discord bot built with Node.js and discord.js that allows you to add messages to a list and send them (spam) to specific users or all members in a server via direct messages (DMs). It includes slash commands for ease of use and a logging system to track progress and results in a specified Discord channel.
-
-**Warning**: Spamming or mass DMing violates Discord's Terms of Service (TOS) and can result in your bot, account, or server being banned. This bot is for educational purposes only. Use it responsibly in private servers with explicit consent from all participants. The developer is not responsible for any misuse.
-
-## Features
-- Add messages to a spam list (`/addmsg`).
-- Send messages to a specific user (`/sendto`).
-- Send messages to all non-bot members in the server (`/sendall` - admin only).
-- Set a log channel for progress updates, successes, failures, and summaries (`/setlogchannel` - admin only).
-- Logs include start/end of operations, per-user status (for `/sendall`), progress every 10 members, and final summaries.
 
 
 ## Setup Instructions
