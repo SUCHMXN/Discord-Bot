@@ -2,7 +2,8 @@
 DM Bot for discord keep in mind if caught abusing your account may be reported, limited or banned
 
 
-ENV Example:
+ENV ExamplE Below
+
 
 TOKEN=YOUR_BOT_TOKEN 
 
