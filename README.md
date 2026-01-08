@@ -1,6 +1,13 @@
 # Discord Spam Bot
 DM Bot for discord keep in mind if caught abusing your account may be reported, limited or banned
 
+-------
+ENV Example:
+TOKEN=YOUR_BOT_TOKEN
+CLIENT_ID=YOUR_CLIENT_ID
+GUILD_ID=YOUR_GUILD_ID
+-------
+
 ## Setup
 
 1. Install dependencies: `npm install`
@@ -91,3 +98,5 @@ Once the bot is running and invited to your server:
 
 5. **View Commands**:
 - In Discord, type `/` to list them. Responses are ephemeral (visible only to you).
+
+If you made it this far and the bot doesnt work i cannot help you, i dont give support for discord bot applications that are free, this is just the source code for whoever wants it
