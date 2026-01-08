@@ -16,6 +16,8 @@ This is a simple Discord bot built with Node.js and discord.js that allows you t
 - Set a log channel for progress updates, successes, failures, and summaries (`/setlogchannel` - admin only).
 - Logs include start/end of operations, per-user status (for `/sendall`), progress every 10 members, and final summaries.
 
+## Setup
+
 ENV Example Below
 
 
@@ -25,8 +27,6 @@ CLIENT_ID=YOUR_CLIENT_ID
 
 GUILD_ID=YOUR_GUILD_ID
 
-
-## Setup
 
 1. Install dependencies: `npm install`
 2. Fill in your values inside of `.env` not inside of `.env.example`
