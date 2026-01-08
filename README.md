@@ -3,6 +3,7 @@ DM Bot for discord keep in mind if caught abusing your account may be reported, 
 
 
 ENV Example:
+
 TOKEN=YOUR_BOT_TOKEN 
 
 CLIENT_ID=YOUR_CLIENT_ID
