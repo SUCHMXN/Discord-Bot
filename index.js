@@ -1,29 +1,20 @@
 require('dotenv').config();
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require('discord.js');
-const { TOKEN, CLIENT_ID, GUILD_ID } = process.env; // Use environment variables for security
+const { TOKEN, CLIENT_ID, GUILD_ID } = process.env; 
 
-// If not using env vars, hardcode them (not recommended):
-// const TOKEN = 'YOUR_BOT_TOKEN';
-// const CLIENT_ID = 'YOUR_CLIENT_ID';
-// const GUILD_ID = 'YOUR_GUILD_ID'; // For guild-specific commands; remove for global
-
-// Intents setup
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMembers, // Needed for fetching members
+    GatewayIntentBits.GuildMembers, 
   ],
 });
 
-// Global array for messages and log channel ID
 let messages = [];
-let logChannelId = null; // Will be set via command
+let logChannelId = null; 
 
-// When the client is ready
 client.once('ready', async () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
-  // Register slash commands
   const commands = [
     new SlashCommandBuilder()
       .setName('addmsg')
@@ -50,7 +41,7 @@ client.once('ready', async () => {
         option.setName('times')
           .setDescription('Number of times to repeat (default 1)')
           .setRequired(false))
-      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator), // Admin only
+      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     new SlashCommandBuilder()
       .setName('setlogchannel')
       .setDescription('Set the channel where logs will be sent')
@@ -59,23 +50,20 @@ client.once('ready', async () => {
           .setDescription('The channel to send logs to')
           .addChannelTypes(ChannelType.GuildText)
           .setRequired(true))
-      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator), // Admin only
+      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
   ].map(command => command.toJSON());
 
   const rest = new REST({ version: '10' }).setToken(TOKEN);
 
   try {
     console.log('Started refreshing application (/) commands.');
-    // For guild-specific (faster for testing):
     await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: commands });
-    // For global: await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
     console.log('Successfully reloaded application (/) commands.');
   } catch (error) {
     console.error(error);
   }
 });
 
-// Function to send log to the log channel if set
 async function sendLog(message) {
   if (logChannelId) {
     const logChannel = client.channels.cache.get(logChannelId);
@@ -89,7 +77,6 @@ async function sendLog(message) {
   }
 }
 
-// Handle slash commands
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -145,7 +132,7 @@ client.on('interactionCreate', async interaction => {
     let failed = [];
     let progressCounter = 0;
 
-    const members = await guild.members.fetch(); // Fetch all members
+    const members = await guild.members.fetch();
     const totalMembers = Array.from(members.values()).filter(m => !m.user.bot).length;
 
     for (const member of members.values()) {
@@ -183,5 +170,4 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-// Login to Discord
 client.login(TOKEN);
