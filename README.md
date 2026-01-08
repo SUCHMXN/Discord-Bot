@@ -5,8 +5,10 @@ DM Bot for discord keep in mind if caught abusing your account may be reported, 
 ENV Example Below
 
 
-TOKEN=YOUR_BOT_TOKEN 
+TOKEN=YOUR_BOT_TOKEN
+
 CLIENT_ID=YOUR_CLIENT_ID
+
 GUILD_ID=YOUR_GUILD_ID
 
 
